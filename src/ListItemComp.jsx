@@ -4,13 +4,9 @@ function ListItemComp({listel,handletoggle}) {
 
 
     const handlecheckboxchange=(e)=>{
-        e.preventDefault();
-        handletoggle(e.target.value);
+        // e.preventDefault();
+        handletoggle(parseInt(e.target.value) );
         console.log(e.target.value);
-    }
-
-    const handleonclick=(e)=>{
-        
     }
 
 
@@ -19,7 +15,7 @@ function ListItemComp({listel,handletoggle}) {
 
     <div>
 
-    <input type="checkbox" checked={listel.done} value={listel.id} onChange={handlecheckboxchange} onClick={handleonclick} />
+    <input type="checkbox" checked={listel.done} value={listel.id} onChange={handlecheckboxchange}  />
 
     
         <span>{listel.id} </span>
