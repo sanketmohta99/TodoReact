@@ -1,12 +1,12 @@
 import React from 'react'
 
-function ListItemComp({listel,handletoggle}) {
+function ListItemComp({listel,handletoggle, index}) {
 
 
     const handlecheckboxchange=(e)=>{
         // e.preventDefault();
-        handletoggle(parseInt(e.target.value) );
-        console.log(e.target.value);
+        handletoggle(e.target.value );
+        console.log(`${e.target.value} id  of the target variable`);
     }
 
 
@@ -18,7 +18,7 @@ function ListItemComp({listel,handletoggle}) {
     <input type="checkbox" checked={listel.done} value={listel.id} onChange={handlecheckboxchange}  />
 
     
-        <span>{listel.id} </span>
+        <span>{index} </span>
          . 
          <span className={listel.done===true ? "striketodo": ""}> {listel.listitem} </span> 
     
